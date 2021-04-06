@@ -21,7 +21,7 @@ namespace Azure_Queues
                 queueClient.DeleteMessage(message1.MessageId, message1.PopReceipt);
             }
 
-            queueClient.SendMessage("MP Test Message 1");
+            queueClient.SendMessage("MP Test Message 1"); // We can also use AddMessageAsync(message), where message is CloudQueueMessage("MP Test Message 1")
 
             QueueMessage message2 = queueClient.ReceiveMessage();
             Console.WriteLine($"Message: {message2.Body}");
